@@ -1,0 +1,30 @@
+@mixin resTablet {
+    @media screen and (max-width: 896px){
+        @content;
+    }
+}
+@mixin resContact {
+    @media screen and (max-width: 670px){
+        @content;
+    }
+}
+@mixin resMobile {
+    @media screen and (max-width: 530px){
+        @content;
+    }
+}
+@mixin resTabSlide {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+@mixin resMobileSlide {
+    @media screen and (max-width: 700px) {
+        @content;
+    }
+}
+@mixin resFtIpt {
+    @media screen and (max-width: 669px) {
+        @content;
+    }
+}

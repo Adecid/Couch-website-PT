@@ -1,0 +1,59 @@
+.banner {
+    background: linear-gradient(transparent, $Deep-Taupe), url(..//../assests/bg/bg2-img.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+
+    .banner-container {
+        padding: 40px 10%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        
+        @include resTablet {
+            padding: 40px 5%;
+        }
+        @include resTablet {
+            padding: 40px 2%;
+        }
+
+        .banner-text-one {
+            align-self: flex-start;
+            margin-bottom: $base-margin * 2;
+            h1 {
+                font-size: $xl-font-size * 2;
+                color: $primary-brown;  
+
+                @include resTablet {
+                    font-size: $xl-font-size * 1.3;
+                }
+                @include resMobile {
+                    font-size: $xl-font-size;
+                }
+            }
+            
+            p {
+                font-size: $md-font-size * 2;
+                font-family: Aesthetic;
+                color: lighten($Deep-Taupe, 14%);
+                font-weight: 700;
+            }
+        }
+        .banner-text-two {
+            text-align: center;
+            
+            h2 {
+                color: $white;
+                font-size: $xl-font-size;
+
+                @include resMobile {
+                    font-size: $lg-font-size;
+                }
+            }
+        
+        }
+    }
+}

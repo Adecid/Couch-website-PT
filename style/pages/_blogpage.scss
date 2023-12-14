@@ -1,0 +1,90 @@
+.blog {
+    .blog-main-text {
+        @extend %placeflex;
+        justify-content: space-between;
+
+        .blog-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+
+            i {
+                color: $primary-dark;
+                font-size: $lg-font-size;
+                font-weight: 500;
+                cursor: pointer;
+            }
+        }
+    }
+
+    
+    .blog-container {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% / 3) - 12px);
+        overflow: auto;
+        cursor: pointer;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: 0;
+        gap: 1.3rem;
+        max-width: 1300px;
+        
+        @include resTabSlide {
+            grid-auto-columns: calc((100% / 2) - 12px);
+        }
+        @include resMobileSlide {
+            grid-auto-columns: 100%;
+        }
+        
+        &.nowDragging {
+            scroll-snap-type: none;
+            scroll-behavior: auto;
+        }
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        
+        &.nowDragging {
+            .blog-card {
+                cursor: grab;
+                user-select: none;
+            }
+        }
+
+        .blog-card {
+            width: 100%;
+            scroll-snap-align: start;
+            
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .blog-text {
+                padding: 0 $base-padding;
+
+                h2 {
+                    font-size: $md-font-size;
+                    color: $Deep-Taupe;
+                }
+                p {
+                    margin: $base-margin - .7 0;
+                    color: $black;
+                    letter-spacing: .4px;
+                }
+                a {
+                    color: $primary-dark;
+                    transition: all .40s ease;
+                    font-size: $sm-font-size;
+                    font-weight: 500;
+
+                    &:hover {
+                        color: lighten($primary-dark, 20%);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,110 @@
+.feature {
+    margin-top: 40px;
+    .feature-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+        gap: 2rem;
+        align-items: center;
+
+        @include resMobile {
+            grid-template-columns: 1fr;
+        }
+        
+        .feature-content {
+            position: relative;
+            overflow: hidden;
+            
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            .feature-text {
+                padding: 0 $base-padding;
+                
+                h2 {
+                    font-size: $md-font-size;
+                    color: $Deep-Taupe;
+                    margin-bottom: 5px;
+                }
+                .amount {
+                    @extend %placeflex;
+                    justify-content: space-between;
+
+                    .a-1 {
+                        color: $primary-brown;
+                        font-weight: 500;
+                    }
+                    .a-2 {
+                        text-decoration: line-through;
+                        font-size: $sm-font-size;
+                        color: lighten($Deep-Taupe, 10%);
+                    }
+                }
+            }
+
+            .icon-1 {
+                position: absolute;
+                bottom: 30%;
+                left: 10px;
+                
+                i {
+                    padding: 10px;
+                    background: $white;
+                    cursor: pointer;
+                    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 7px;
+                    text-align: center;
+                    color: $primary-dark;
+                    font-size: $md-font-size;
+                    transition: all .40s ease;
+
+                    &:hover {
+                        color: $white;
+                        background: $Deep-Taupe;
+                    }
+
+                }
+            }
+            
+            .feature-icon {
+                position: absolute;
+                bottom: 30%;
+                left: 10px;
+                transform: scale(0);
+                text-align: center;
+                opacity: 0;
+                pointer-events: none;
+                visibility: hidden;
+                transition: all .40s ease;
+                
+                &.show {
+                    @extend %placeflex;
+                    gap: 1rem;
+                    position: absolute;
+                    bottom: 50%;
+                    left: 50%;                  
+                    transform: scale(1) translate(-50%, -50%);
+                    opacity: 1;
+                    pointer-events: auto;
+                    visibility: visible;
+                }
+                
+                i {
+                    font-size: $md-font-size;
+                    background: $white;
+                    padding: 10px;
+                    color: $black;
+                    text-align: center;
+                    color: $primary-dark;
+                    cursor: pointer;
+                    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 7px;
+                    transition: all .40s ease;
+
+                    &:hover {
+                        color: $white;
+                        background: $primary-brown;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,290 @@
+.contact-banner {
+    background: linear-gradient(transparent, rgba(0,0,0,0.55)), url(..//../assests/bg/bg3-img.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+    display: grid;
+    place-items: center;
+    align-items: center;
+
+    .contact-text {
+        text-align: center;
+        font-size: $md-font-size + .12;
+        
+        @include resMobile {
+            font-size: $sm-font-size + .22;
+        }
+
+        h1 {
+            color: $Deep-Taupe;
+            font-size: $lg-font-size;
+            margin-bottom: 1rem;
+        }
+    }
+        .offer {
+        color: $primary-brown;
+        
+        span {
+            color: $white;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border: 2px solid $primary-brown;
+            }
+        }
+    }
+}
+
+.contact {
+    @extend %placeflex;
+    justify-content: center;
+    width: 100%;
+
+    .contact-form-container {
+        background: $white;
+        max-width: 850px;
+        width: 100%;
+        display: grid;
+        border-radius: 5px;
+        grid-template-columns: repeat(2, 1fr);
+        box-shadow: 4px 10px 23px rgba(0,0,0,0.15);
+        overflow: hidden;
+        
+        @include resContact {
+            grid-template-columns: 1fr;
+            row-gap: 2rem;
+        }
+
+        .contact-form {
+            background: $secondary;
+            position: relative;
+
+            .form-circle {
+                position: absolute;
+                border-radius: 50%;
+                background: linear-gradient(135deg, transparent, #6e795f);
+                
+                &.one {
+                    width: 130px;
+                    height: 130px;
+                    top: 130px;
+                    right: -40px;
+                }
+                &.two {
+                    width: 80px;
+                    height: 80px;
+                    top: 10px;
+                    right: 30px;
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                background: $secondary;
+                top: 50px;
+                left: -12px;
+                transform: rotate(45deg);
+
+                @include resContact {
+                    top: -10px;
+                    left: 10%;
+                }
+            }
+
+            form {
+                padding: $base-padding * 3 $base-padding * 2;
+                z-index: 15;
+                overflow: hidden;
+
+                .form-title {
+                    color: $white;
+                    margin-bottom: $base-margin;
+                    font-weight: 500;
+                    font-size: $md-font-size;
+                }
+
+                .input-field {
+                    position: relative;
+                    margin: $base-margin 0;
+
+                    label {
+                        position: absolute;
+                        left: 15px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        padding: 0 0.4rem;
+                        color: $white;
+                        font-size: 0.9rem;
+                        font-weight: 400;
+                        pointer-events: none;
+                        z-index: 500;
+                        transition: all .40s ease;
+                    }
+                    &.focus {
+                        label {
+                            top: 0;
+                            transform: translateY(-50%);
+                            left: 28px;
+                            font-size: 0.8rem;
+                        }
+                    }
+                    .input {
+                        width: 100%;
+                        padding: 0.6rem 1.2rem;
+                        background: transparent;
+                        border: 2px solid $light;
+                        border-radius: 25px;
+                        color: $white;
+                        font-weight: 500;
+                        font-size: 0.90rem;
+                        letter-spacing: 0.5px;
+                        transition: all .3s ease;
+                    }
+                    &.focus {
+                        span {
+                            &::before,
+                            &::after {
+                                width: 50%;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    span {
+                        position: absolute;
+                        top: 0%;
+                        left: 25px;
+                        transform: translateY(-50%);
+                        color: transparent;
+                        font-size: 0.9rem;
+                        padding: 0 0.4rem;
+                        font-weight: 400;
+                        z-index: 100;
+                        transition: all .3s ease;
+
+                        &::before,
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            width: 10%;
+                            opacity: 0;
+                            height: 5px;
+                            background: $secondary;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            transition: all .3s ease;
+                        }
+                        &::before {
+                            left: 50%;
+                        }
+                        &::after {
+                            right: 50%;
+                        }
+                    }
+                }
+                .textarea {
+                    .input {
+                        padding: 0.8rem 1.2rem;
+                        min-width: 100%;
+                        min-height: 150px;
+                        border-radius: 22px;
+                        outline: none;
+                        resize: none;
+                        overflow-y: auto;
+                    }
+
+                    label {
+                        top: 1rem;
+                        transform: translateY(0);
+                    }
+                }
+
+                .btn {
+                    padding: .4rem $base-padding;
+                    border-radius: 25px;
+                    color: $secondary;
+                    background: transparent;
+                    border: 2px solid $light;
+                    font-size: 1rem;
+                    transition: all .40s ease;
+                    background: $white;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $white;
+                        background: transparent;
+                    }
+                }
+            }
+        }
+
+        .contact-info {
+            padding: $base-padding * 3 $base-padding * 2;
+            z-index: 500;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                border: 15px solid $secondary;
+                border-radius: 50%;
+                z-index: -1;
+                bottom: -17%;
+                right: 70px;
+                opacity: .4;
+            }
+
+            .title {
+                color: $secondary;
+                margin-bottom: $base-margin;
+                font-weight: 500;
+                font-size: $md-font-size;
+            }
+
+            .text {
+                font-size: $sm-font-size * 1.2;
+                line-height: 1.7;
+                margin-bottom: 23px;
+            }
+            .address {
+                line-height: 1.6;
+                p {
+                    @extend %placeflex;
+                    gap: .7rem;
+                    i {
+                        color: $secondary;
+                        font-size: $lg-font-size;
+                    }
+                }
+            }
+            .info-link {
+                margin-top: 23px;
+                span {
+                    color: $black;
+                    font-weight: 500;
+                    font-size: $sm-font-size;
+                }
+                .info-links {
+                    margin-top: 11px;
+
+                    i {
+                        padding: 10px;
+                        border-radius: 4px;
+                        background: linear-gradient(to top, transparent, $secondary);
+                        color: $Deep-Taupe;
+                        cursor: pointer;
+                    }
+                } 
+            }
+        }
+    }
+}
+

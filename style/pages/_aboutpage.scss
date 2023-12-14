@@ -1,0 +1,101 @@
+@font-face {
+    font-family: Aesthetic;
+    src: url('..//../assests/font/Aesthetic.otf');
+}
+@font-face {
+    font-family: Mangsi;
+    src: url('..//../assests/font/Mangsi.otf');
+}
+
+.about {
+    background: $secondary;
+    overflow: hidden;
+
+    .about-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        position: relative;
+
+        @include resTablet {
+            flex-direction: column;
+        }
+        .about-col {
+            display: flex;
+            gap: 1rem;
+
+            img {
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+            }
+            &.first {
+                
+                .first-img {
+                    img {
+                        &:nth-child(1) {
+                            width: clamp(150px, 170px, 200px);
+                            height: clamp(150px, 170px, 200px);
+                        }
+                    }
+                }
+                .second-img {
+                    img {
+                        width: clamp(130px, 130px, 170px);
+                        height: 300px;
+                        
+                    }
+                }
+            }
+        }
+        .third {
+            img {
+                &:last-child {
+                    width: clamp(150px, 170px, 200px);
+                    height: 400px;
+                }
+            }
+        }
+        .about-text {
+            margin: auto;
+
+            .text1 {
+                font-size: $xl-font-size * 2;
+                font-family: Aesthetic;
+                position: absolute;
+                top: 0;
+                color: $white;
+                text-shadow: rgba(0, 0, 0, 0.5) 3px 3px 6px;
+
+                span {
+                    font-size: $md-font-size;
+                }
+            }
+            .text2 {
+                font-size: $lg-font-size;
+                opacity: .8;
+                font-family: Mangsi;
+                margin-top: $base-margin * 2;
+            }
+            .text3 {
+                margin: $base-margin 0;
+                color: $light;
+            }
+        }
+    }
+}
+
+.section-text {
+    margin-bottom: $base-margin * 3;
+    
+    h1 {
+        font-size: $lg-font-size;
+        color: $primary-dark;
+    }
+    
+    p {
+        color: $Deep-Taupe;
+        font-weight: 400;
+        font-size: $sm-font-size;
+    }
+}

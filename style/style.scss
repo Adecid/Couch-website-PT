@@ -1,0 +1,24 @@
+// base
+@import 'base';
+
+// variable 
+@import 'variables';
+
+// colors
+@import 'colors';
+
+@import 'responsive';
+// layout
+@import 'layout/header';
+@import 'layout/navbar';
+@import 'layout/footer';
+
+// pages
+@import 'pages/homepage';
+@import 'pages/slidepage';
+@import 'pages/aboutpage';
+@import 'pages/featurepage';
+@import 'pages/banner';
+@import 'pages/newproductpage';
+@import 'pages/blogpage';
+@import 'pages/contactuspage';

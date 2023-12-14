@@ -1,0 +1,69 @@
+//************ font
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import 'responsive';
+@import 'colors';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: $background;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+%placeflex {
+    display: flex;
+    align-items: center;
+}
+
+header {
+    padding: 1% 10%;
+
+    @include resTablet {
+        padding: 1% 5%;
+    }
+    @include resMobile {
+        padding: 1% 2%;
+    }
+}
+footer {
+    padding: 40px 10% 0;
+
+    @include resTablet {
+        padding: 40px 5% 0;
+    }
+    @include resMobile {
+        padding: 40px 2% 0;
+    }
+}
+.section {
+    padding: 6rem 10%;
+
+    @include resTablet {
+        padding: 6rem 5%;
+    }
+    @include resMobile {
+        padding: 6rem 2%;
+    }
+}
